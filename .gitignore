@@ -216,3 +216,16 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# project-specific
+.env
+runs/
+cache/
+models/
+*.png
+*.jpg
+*.mp4
+*.safetensors
+*.ckpt
+.DS_Store
+!docs/**
