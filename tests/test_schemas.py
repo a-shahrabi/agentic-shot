@@ -119,6 +119,14 @@ def test_all_critical_pass_and_mean_above_threshold():
     assert not e.overall_pass(threshold=0.95)
 
 
+def test_confidently_wrong_soft_field_blocks_pass():
+    # camera_angle=0.1 with everything else at 0.9 averages ~0.78, above threshold,
+    # but must still fail: a badly-wrong field may not hide behind the mean.
+    e = make_eval(camera=0.1)
+    assert e.weighted_score() > 0.7
+    assert not e.overall_pass(threshold=0.7)
+
+
 def test_fields_to_revise_respects_per_field_threshold():
     # camera_angle at 0.4 is below pass but above its revise_below (0.3): logged, no retry
     assert make_eval(camera=0.4).fields_to_revise() == []

@@ -77,8 +77,16 @@ class Evaluation(BaseModel):
         return sum(ShotSpec.meta(v.field).weight * v.score for v in ev) / total
 
     def overall_pass(self, threshold: float) -> bool:
-        """All critical fields pass AND weighted mean >= threshold."""
-        return self.critical_pass() and self.weighted_score() >= threshold
+        """All critical fields pass
+        AND no field is confidently wrong (below its own revise_below)
+        AND weighted mean >= threshold.
+
+        The middle clause stops one badly-wrong soft field (e.g. camera_angle=0.1)
+        from hiding behind high scores elsewhere. Fields the critic is weak on have
+        low revise_below, so they only block when the critic is emphatic."""
+        return (self.critical_pass()
+                and not self.fields_to_revise()
+                and self.weighted_score() >= threshold)
 
     def fields_to_revise(self) -> list[str]:
         """Fields whose score is below their own revise_below threshold."""

@@ -22,6 +22,7 @@ class RunStatus(str, Enum):
     RUNNING = "running"
     COMPLETED = "completed"
     COMPLETED_WITH_SOFT_FAILURES = "completed_with_soft_failures"
+    COMPLETED_WITH_CRITICAL_FAILURES = "completed_with_critical_failures"  # only via on_exhausted="always"
     FAILED_KEYFRAME = "failed_keyframe"   # exhausted attempts, critical field still failing
     FAILED_VIDEO = "failed_video"         # animation step errored
     ERROR = "error"                       # unexpected exception
