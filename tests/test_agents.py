@@ -5,7 +5,7 @@ import pytest
 from agentic_shot.agents import LLMPlanner, LLMPrompter
 from agentic_shot.agents.prompter import PROMPT_FIELDS
 from agentic_shot.backends.llm import parse_structured
-from agentic_shot.schemas import EvaluableIn, Evaluation, FieldVerdict, ShotSpec
+from agentic_shot.schemas import EvaluableIn, Evaluation, FieldVerdict, ImagePrompt, ShotSpec
 from tests.test_schemas import make_prompt, make_spec
 
 
@@ -158,3 +158,46 @@ def test_real_agents_drive_the_pipeline(tmp_path):
     assert a1.prompt.segments["camera_angle"] == "seen from directly behind, face not visible"
     assert a0.seed == a1.seed == 7
     assert llm.replies == []   # exactly 3 LLM calls
+
+
+# ---- word budget ------------------------------------------------------------
+
+def _long(n=40):
+    return {f: " ".join(["word"] * n) for f in PROMPT_FIELDS}
+
+
+def test_short_prompt_makes_no_compress_call():
+    llm = ScriptedLLM({f: f"{f} text" for f in PROMPT_FIELDS})
+    pr = LLMPrompter(llm)
+    pr.write(make_spec())
+    assert len(llm.calls) == 1 and pr.last_warnings == []
+
+
+def test_over_budget_triggers_one_compress_call():
+    short = {f: "a few words here" for f in PROMPT_FIELDS}
+    llm = ScriptedLLM(_long(), short)
+    pr = LLMPrompter(llm)
+    p = pr.write(make_spec())
+    assert len(llm.calls) == 2
+    assert "shorten" in llm.calls[1]["messages"][0]["content"]
+    assert p.word_count() <= pr.word_budget
+    assert pr.last_warnings == []
+
+
+def test_compress_that_fails_warns_and_stops():
+    llm = ScriptedLLM(_long(), _long())      # compression returns the same length
+    pr = LLMPrompter(llm)
+    p = pr.write(make_spec())
+    assert len(llm.calls) == 2               # exactly one retry, no loop
+    assert p.word_count() > pr.word_budget
+    assert pr.last_warnings and "truncated" in pr.last_warnings[0]
+
+
+def test_revise_over_budget_warns_but_keeps_frozen_segments():
+    base = ImagePrompt(segments=_long(20))   # 140 words, under budget
+    llm = ScriptedLLM({"revisions": [{"field": "camera_angle",
+                                      "text": " ".join(["new"] * 60), "rationale": "r"}]})
+    pr = LLMPrompter(llm)
+    new = pr.revise(base, eval_failing(camera_angle=0.1), make_spec(), escalate=True)
+    assert base.diff(new) == ["camera_angle"]   # frozen segments untouched
+    assert pr.last_warnings and "budget" in pr.last_warnings[0]

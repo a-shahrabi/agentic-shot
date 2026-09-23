@@ -65,8 +65,23 @@ def test_prompt_roundtrip_and_compile():
     p = make_prompt()
     assert ImagePrompt.model_validate_json(p.model_dump_json()) == p
     compiled = p.compile()
-    assert compiled.startswith("a lone samurai")
-    assert compiled.index("shot from behind") < compiled.index("neon reflections")
+    # framing first, mood last, sentence-joined
+    assert compiled.startswith("Shot from behind")
+    assert compiled.index("Shot from behind") < compiled.index("A lone samurai")
+    assert compiled.index("Neon reflections") < compiled.index("Solitary, tense")
+    assert compiled.endswith(".")
+
+
+def test_compile_strips_trailing_punctuation():
+    p = ImagePrompt(segments={"subject": "a samurai.", "setting": "neon street,  ",
+                              "camera_angle": "from behind;", "mood": ""})
+    assert p.compile() == "From behind. A samurai. Neon street."
+    assert ".," not in p.compile() and ".." not in p.compile()
+
+
+def test_compile_order_covers_all_fields():
+    from agentic_shot.schemas.prompt import COMPILE_ORDER
+    assert set(COMPILE_ORDER) == set(ShotSpec.FIELD_ORDER)
 
 
 def test_manifest_roundtrip(tmp_path: Path):
