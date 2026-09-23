@@ -48,6 +48,14 @@ def show(title: str, mapping: dict[str, str]) -> None:
             print(f"    {'':<16}{line}")
 
 
+def shared_trigrams(a: str, b: str) -> set[str]:
+    """3-word phrases present in both texts. REWRITE should drive this toward 0."""
+    def grams(t: str) -> set[str]:
+        w = [x.strip(".,;:").lower() for x in t.split()]
+        return {" ".join(w[i:i + 3]) for i in range(len(w) - 2)}
+    return grams(a) & grams(b)
+
+
 def fake_camera_failure(spec: ShotSpec) -> Evaluation:
     """A plausible critic verdict: everything fine except the camera angle."""
     verdicts = []
@@ -105,7 +113,11 @@ def main() -> None:
             continue
         show("SPEC", spec.as_dict())
         show("PROMPT SEGMENTS", prompt.segments)
-        print(f"\n  COMPILED ({len(prompt.compile().split())} words)")
+        budget = prompter.word_budget
+        flag = "" if prompt.word_count() <= budget else "  <-- OVER BUDGET"
+        print(f"\n  COMPILED ({prompt.word_count()} words / budget {budget}){flag}")
+        for w in prompter.last_warnings:
+            print(f"  WARNING: {w}")
         print(textwrap.indent(textwrap.fill(prompt.compile(), WRAP - 4), "    "))
         results.append({"description": desc, "spec": spec.model_dump(),
                         "prompt": prompt.model_dump(), "compiled": prompt.compile()})
@@ -127,6 +139,11 @@ def main() -> None:
                 show(f"{f}  (before)", {f: prompt.segments.get(f, "")})
                 show(f"{f}  (after)", {f: revised.segments[f]})
                 print(f"    rationale: {prompter.last_rationales.get(f, '-')}")
+                reused = shared_trigrams(prompt.segments.get(f, ""), revised.segments[f])
+                print(f"    reused 3-word phrases: {len(reused)}"
+                      + (f"  {sorted(reused)[:5]}" if reused else ""))
+            for w in prompter.last_warnings:
+                print(f"    WARNING: {w}")
             results.append({"revise_demo": mode, "changed": changed,
                             "revised": revised.model_dump()})
 
