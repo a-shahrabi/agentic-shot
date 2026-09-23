@@ -32,3 +32,8 @@ class PipelineConfig(BaseModel):
     on_exhausted: OnExhausted = "animate_if_critical_pass"
     image_profile: str = Field(default="dev", description="Recorded in manifest; consumed by the image backend.")
     video_duration_s: float = 5.0
+    aspect_ratio: str = Field(
+        default="2.39:1",
+        description="Frame shape. Applied by the image backend as width/height, never written "
+                    "into the prompt (image models ignore it as text).",
+    )

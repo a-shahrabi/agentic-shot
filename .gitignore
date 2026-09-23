@@ -229,3 +229,7 @@ models/
 *.ckpt
 .DS_Store
 !docs/**
+
+_old/
+scratch/
+.venv/

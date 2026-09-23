@@ -7,6 +7,22 @@ from pydantic import BaseModel, Field, field_validator
 
 from .spec import ShotSpec
 
+# Order segments are compiled in. Separate from ShotSpec.FIELD_ORDER on purpose:
+# FLUX weights early tokens most, so framing goes first; mood (least literal) goes last.
+# camera_movement is listed for completeness but never has a segment (invisible in a still).
+COMPILE_ORDER: tuple[str, ...] = (
+    "camera_angle", "subject", "action", "setting",
+    "lighting", "style", "mood", "camera_movement",
+)
+assert set(COMPILE_ORDER) == set(ShotSpec.FIELD_ORDER), "COMPILE_ORDER must cover every field"
+
+_TRAILING = " \t\n.,;:"
+
+
+def _clean(segment: str) -> str:
+    s = segment.strip().rstrip(_TRAILING).strip()
+    return s[:1].upper() + s[1:] if s else s
+
 
 class ImagePrompt(BaseModel):
     segments: dict[str, str] = Field(
@@ -24,11 +40,14 @@ class ImagePrompt(BaseModel):
         return v
 
     def compile(self) -> str:
-        """Join segments in canonical field order. Empty segments are skipped.
+        """Join segments in COMPILE_ORDER as sentences. Empty segments are skipped.
         This string (plus negative, seed, profile) is the image cache key."""
-        parts = [self.segments[f].strip() for f in ShotSpec.FIELD_ORDER
-                 if self.segments.get(f, "").strip()]
-        return ", ".join(parts)
+        parts = [_clean(self.segments.get(f, "")) for f in COMPILE_ORDER]
+        parts = [p for p in parts if p]
+        return ". ".join(parts) + ("." if parts else "")
+
+    def word_count(self) -> int:
+        return len(self.compile().split())
 
     def with_segments(self, updates: dict[str, str]) -> "ImagePrompt":
         """Return a new prompt with only the given segments replaced."""
