@@ -73,22 +73,30 @@ def parse_structured(text: str, schema: type[T]) -> T:
 
 
 class OpenAICompatibleLLM:
-    """OpenAI chat-completions client. Set base_url for Ollama or any compatible server."""
+    """OpenAI chat-completions client. Set base_url for Ollama or any compatible server.
+
+    Handles two quirks of newer OpenAI reasoning models:
+    - they take `max_completion_tokens`, not `max_tokens`
+    - some reject a non-default `temperature`; we retry once without it and remember.
+    """
 
     def __init__(self, model: str, api_key: str | None = None,
-                 base_url: str | None = None, max_tokens: int = 2000):
+                 base_url: str | None = None, max_tokens: int = 8000):
         from openai import OpenAI  # lazy: keeps tests free of the dependency
         self.model = model
         self.max_tokens = max_tokens
+        self.base_url = base_url
         self._client = OpenAI(api_key=api_key, base_url=base_url)
+        self._temperature_ok = True
         self.last_usage: dict[str, int | None] = {}
 
     def complete(self, messages, *, schema=None, images=(), temperature=0.0):
         msgs = attach_images(messages, images)
-        kwargs: dict[str, Any] = dict(
-            model=self.model, messages=msgs,
-            temperature=temperature, max_tokens=self.max_tokens,
-        )
+        kwargs: dict[str, Any] = dict(model=self.model, messages=msgs)
+        # OpenAI proper wants max_completion_tokens; compatible servers (Ollama) want max_tokens.
+        kwargs["max_completion_tokens" if self.base_url is None else "max_tokens"] = self.max_tokens
+        if self._temperature_ok and temperature is not None:
+            kwargs["temperature"] = temperature
         if schema is not None:
             kwargs["response_format"] = {
                 "type": "json_schema",
@@ -97,13 +105,27 @@ class OpenAICompatibleLLM:
                     "schema": schema.model_json_schema(),
                 },
             }
-        resp = self._client.chat.completions.create(**kwargs)
+        try:
+            resp = self._client.chat.completions.create(**kwargs)
+        except Exception as e:
+            if "temperature" in kwargs and "temperature" in str(e).lower():
+                self._temperature_ok = False
+                kwargs.pop("temperature")
+                resp = self._client.chat.completions.create(**kwargs)
+            else:
+                raise
         usage = getattr(resp, "usage", None)
         self.last_usage = {
             "tokens_in": getattr(usage, "prompt_tokens", None),
             "tokens_out": getattr(usage, "completion_tokens", None),
         }
         text = resp.choices[0].message.content or ""
+        if schema is not None and not text.strip():
+            raise ValueError(
+                f"Empty response from {self.model} "
+                f"(finish_reason={resp.choices[0].finish_reason}); "
+                "raise max_tokens if the model is spending its budget on reasoning."
+            )
         return parse_structured(text, schema) if schema is not None else text
 
 

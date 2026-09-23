@@ -15,7 +15,7 @@ from tests.test_schemas import make_spec
 GOOD = {}                      # everything defaults to 0.9 -> pass
 BAD_CAMERA = {"camera_angle": 0.1}
 BAD_SUBJECT = {"subject": 0.1}
-SOFT_FAIL = {"camera_angle": 0.35, "lighting": 0.35, "mood": 0.35, "style": 0.35}  # above revise_below (0.3), below pass # above revise_below (0.3), below pass
+SOFT_FAIL = {"camera_angle": 0.35, "lighting": 0.35, "mood": 0.35, "style": 0.35}  # above revise_below (0.3), below pass
 
 
 def build(tmp_path: Path, script, *, config=None, prompter=None, video_fail=False):

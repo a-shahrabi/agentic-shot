@@ -1,0 +1,121 @@
+[
+  {
+    "description": "A lone samurai walks through rain-soaked neon Tokyo streets at night, dolly shot from behind.",
+    "spec": {
+      "subject": "A lone adult samurai of average height and lean build, wearing a dark indigo kimono under a black lacquered chest armor, wide hakama trousers, and a rain-darkened straw kasa hat; a wrapped katana hangs at the left hip, the fabric edges soaked and heavy with rain.",
+      "setting": "Nighttime Tokyo side street in heavy rain, lined with bright neon signs, vending machines, and wet asphalt reflecting magenta, cyan, and red light; foreground filled with puddles and splashing footsteps, midground the samurai and storefront shutters, background stacked vertical signs, power lines, and blurred apartment windows disappearing into rain haze.",
+      "action": "The samurai walks steadily forward through the rain, shoulders slightly hunched against the weather, with water streaming off the hat brim and armor.",
+      "camera_angle": "Behind the subject, eye level, medium-wide shot on a 35mm lens, the samurai centered slightly low in frame with the street leading away ahead.",
+      "camera_movement": "slow dolly forward, maintaining a fixed distance behind the subject",
+      "lighting": "Motivated by neon signage and storefront practicals from both sides of the street, with a cool cyan key from camera-left and a magenta-red rim from camera-right; soft overall contrast from rain diffusion, bright specular reflections on the wet pavement, light atmospheric haze in the air.",
+      "mood": "lonely, watchful, tense",
+      "style": "Digital capture with fine grain, 2.39:1 aspect ratio, saturated neon color grade with deep blacks and reflective highlights, in the vein of Blade Runner 2049 with wet street reflections and dense colored practicals."
+    },
+    "prompt": {
+      "segments": {
+        "subject": "A lone adult samurai of average height and lean build, wearing a dark indigo kimono under black lacquered chest armor, wide hakama trousers, and a rain-darkened straw kasa hat; a wrapped katana hangs at the left hip, soaked fabric edges heavy with rain.",
+        "setting": "Nighttime Tokyo side street in heavy rain, lined with bright neon signs, vending machines, and wet asphalt reflecting magenta, cyan, and red light. Foreground puddles splash underfoot, with storefront shutters, stacked vertical signs, power lines, and blurred apartment windows fading into rain haze.",
+        "action": "Walking steadily forward through the rain, shoulders slightly hunched against the weather, with water streaming off the hat brim and armor.",
+        "camera_angle": "Seen from directly behind at eye level, medium-wide shot on a 35mm lens, the samurai centered slightly low in frame with the street leading away ahead, back to the camera and face not visible.",
+        "lighting": "Motivated by neon signage and storefront practicals from both sides of the street, with a cool cyan key from camera-left and a magenta-red rim from camera-right. Soft contrast from rain diffusion, bright specular reflections on the wet pavement, and light atmospheric haze in the air.",
+        "mood": "Lonely and watchful, shown by the solitary figure against an empty street, hunched posture, and rain-softened distance around him.",
+        "style": "Digital capture with fine grain, 2.39:1 aspect ratio, saturated neon color grade with deep blacks and reflective highlights. Blade Runner 2049-inspired wet street reflections and dense colored practicals."
+      },
+      "negative": "",
+      "version": 1
+    },
+    "compiled": "A lone adult samurai of average height and lean build, wearing a dark indigo kimono under black lacquered chest armor, wide hakama trousers, and a rain-darkened straw kasa hat; a wrapped katana hangs at the left hip, soaked fabric edges heavy with rain., Nighttime Tokyo side street in heavy rain, lined with bright neon signs, vending machines, and wet asphalt reflecting magenta, cyan, and red light. Foreground puddles splash underfoot, with storefront shutters, stacked vertical signs, power lines, and blurred apartment windows fading into rain haze., Walking steadily forward through the rain, shoulders slightly hunched against the weather, with water streaming off the hat brim and armor., Seen from directly behind at eye level, medium-wide shot on a 35mm lens, the samurai centered slightly low in frame with the street leading away ahead, back to the camera and face not visible., Motivated by neon signage and storefront practicals from both sides of the street, with a cool cyan key from camera-left and a magenta-red rim from camera-right. Soft contrast from rain diffusion, bright specular reflections on the wet pavement, and light atmospheric haze in the air., Lonely and watchful, shown by the solitary figure against an empty street, hunched posture, and rain-softened distance around him., Digital capture with fine grain, 2.39:1 aspect ratio, saturated neon color grade with deep blacks and reflective highlights. Blade Runner 2049-inspired wet street reflections and dense colored practicals."
+  },
+  {
+    "description": "A gunslinger's eyes in extreme close-up as a church bell rings over a dusty square at noon.",
+    "spec": {
+      "subject": "A weathered male gunslinger, late 30s to early 40s, with sun-cracked skin, short stubble, and a scar cutting through one eyebrow; only both eyes and the bridge of his nose are visible in frame, with a dusty film on his eyelashes and a faint reflection of the square in his pupils.",
+      "setting": "Dusty frontier town square at noon, dry heat and bright sun, with pale adobe storefronts and a low church tower implied beyond the frame; foreground is the gunslinger\u2019s face filling the image, midground is the sun-bleached square, and background is the church bell tower ringing over drifting dust.",
+      "action": "He holds perfectly still, eyes narrowing slightly as he listens to the bell ring.",
+      "camera_angle": "front, eye level, extreme close-up, 135mm macro look, the eyes centered slightly low in frame with the bridge of the nose cutting up from the bottom edge.",
+      "camera_movement": "static",
+      "lighting": "Hard overhead noon sunlight motivated by the open sky, with a sharp top-light catching the moisture line in the eyes and a bright dust-filled bounce from the square below; high contrast, warm sunlit highlights with pale beige and ochre shadows, no visible practicals, light airborne dust in the air.",
+      "mood": "tense, watchful, suspended",
+      "style": "Digital capture with fine grain, 2.39:1 aspect ratio, slightly desaturated western color grade with sun-bleached highlights and warm earth tones, in the vein of Sergio Leone\u2019s close-up tension but with a cleaner, modern sensor texture and crisp eye detail."
+    },
+    "prompt": {
+      "segments": {
+        "subject": "A weathered male gunslinger in his late 30s to early 40s, sun-cracked skin, short stubble, and a scar cutting through one eyebrow; only both eyes and the bridge of his nose are visible, with dusty eyelashes and a faint reflection of the square in his pupils.",
+        "setting": "Dusty frontier town square at noon, pale adobe storefronts and a low church tower implied beyond the frame. The foreground is his face filling the image, with the sun-bleached square and drifting dust behind.",
+        "action": "He holds perfectly still, eyes narrowing slightly as if listening to the bell ring.",
+        "camera_angle": "Front-facing at eye level, extreme close-up with a 135mm macro look; the eyes sit slightly low in frame, and the bridge of the nose rises from the bottom edge.",
+        "lighting": "Hard overhead noon sunlight from the open sky, with sharp top-light catching the moisture line in his eyes and bright dust-filled bounce from below. High contrast, warm highlights, pale beige and ochre shadows, airborne dust visible.",
+        "mood": "Tense and watchful, with a suspended stillness shown by his fixed stare and rigid facial stillness against the empty square.",
+        "style": "Digital capture with fine grain, 2.39:1 aspect ratio, slightly desaturated western color grade, sun-bleached highlights, warm earth tones, and crisp eye detail with a modern sensor texture."
+      },
+      "negative": "",
+      "version": 1
+    },
+    "compiled": "A weathered male gunslinger in his late 30s to early 40s, sun-cracked skin, short stubble, and a scar cutting through one eyebrow; only both eyes and the bridge of his nose are visible, with dusty eyelashes and a faint reflection of the square in his pupils., Dusty frontier town square at noon, pale adobe storefronts and a low church tower implied beyond the frame. The foreground is his face filling the image, with the sun-bleached square and drifting dust behind., He holds perfectly still, eyes narrowing slightly as if listening to the bell ring., Front-facing at eye level, extreme close-up with a 135mm macro look; the eyes sit slightly low in frame, and the bridge of the nose rises from the bottom edge., Hard overhead noon sunlight from the open sky, with sharp top-light catching the moisture line in his eyes and bright dust-filled bounce from below. High contrast, warm highlights, pale beige and ochre shadows, airborne dust visible., Tense and watchful, with a suspended stillness shown by his fixed stare and rigid facial stillness against the empty square., Digital capture with fine grain, 2.39:1 aspect ratio, slightly desaturated western color grade, sun-bleached highlights, warm earth tones, and crisp eye detail with a modern sensor texture."
+  },
+  {
+    "description": "Two sisters argue in a cramped Seoul apartment kitchen, handheld, fluorescent light.",
+    "spec": {
+      "subject": "Two Korean sisters in their late 20s and early 30s, both average height and slim build, wearing everyday indoor clothes: one in a gray sweatshirt and loose black pants with her hair tied back in a messy bun, the other in a white T-shirt under a faded blue cardigan with shoulder-length straight hair; both tense, faces tight, one clutching a dish towel, the other with one hand braced on the counter",
+      "setting": "A cramped Seoul apartment kitchen at night, narrow galley layout with laminate cabinets, a small stainless sink, rice cooker, dish rack, chopping board, and a cluttered counter; foreground dominated by the edge of the table and a hanging dish towel, midground by the sisters and sink, background by tiled wall, upper cabinets, and a frosted window with the city faintly visible beyond",
+      "action": "The sisters argue face-to-face, one leaning forward and pointing toward the counter while the other recoils and answers sharply",
+      "camera_angle": "three-quarter front view, eye level, medium shot, 35mm lens, both sisters crowded slightly off-center with the nearer sister on the left third and the other on the right third",
+      "camera_movement": "handheld, slight jitter with a subtle push-in",
+      "lighting": "overhead fluorescent kitchen light as the key, centered above them and spilling forward, creating flat cool-white illumination with mild shadows under brows and chins; practical under-cabinet reflections on metal surfaces; no warm sources, slight green cast typical of fluorescent tubes, no haze",
+      "mood": "tense, cramped, confrontational",
+      "style": "digital, naturalistic handheld realism, fine grain, 16:9, cool green-white color grade, in the vein of Hong Sang-soo with observational framing and unadorned apartment detail"
+    },
+    "prompt": {
+      "segments": {
+        "subject": "Two Korean sisters in their late 20s and early 30s, slim and average height, in everyday indoor clothes. One wears a gray sweatshirt and loose black pants with a messy bun, the other a white T-shirt under a faded blue cardigan with straight shoulder-length hair.",
+        "setting": "A cramped Seoul apartment kitchen at night, narrow galley layout with laminate cabinets, a small stainless sink, rice cooker, dish rack, chopping board, and a cluttered counter. The foreground shows the table edge and a hanging dish towel, with tiled wall, upper cabinets, and a frosted window behind.",
+        "action": "They face each other in a frozen argument, one leaning forward with a pointed hand toward the counter while the other recoils with her mouth open, one hand braced on the counter. The other sister clutches a dish towel tight against her body.",
+        "camera_angle": "Three-quarter front view at eye level, medium shot on a 35mm lens, both sisters crowded slightly off-center. The nearer sister sits on the left third and the other on the right third, both fully visible from the waist up.",
+        "lighting": "Overhead fluorescent kitchen light centered above them, spilling forward with flat cool-white illumination and mild shadows under brows and chins. Under-cabinet reflections catch on metal surfaces, with a slight green cast and no warm sources.",
+        "mood": "Their shoulders are tight, faces drawn, and bodies angled toward each other in a cramped space. The narrow kitchen and cluttered counter make the confrontation feel boxed in and immediate.",
+        "style": "Naturalistic digital realism with fine grain and restrained contrast. Cool green-white color grade, observational framing, and unadorned apartment detail with a subtle handheld documentary feel."
+      },
+      "negative": "",
+      "version": 1
+    },
+    "compiled": "Two Korean sisters in their late 20s and early 30s, slim and average height, in everyday indoor clothes. One wears a gray sweatshirt and loose black pants with a messy bun, the other a white T-shirt under a faded blue cardigan with straight shoulder-length hair., A cramped Seoul apartment kitchen at night, narrow galley layout with laminate cabinets, a small stainless sink, rice cooker, dish rack, chopping board, and a cluttered counter. The foreground shows the table edge and a hanging dish towel, with tiled wall, upper cabinets, and a frosted window behind., They face each other in a frozen argument, one leaning forward with a pointed hand toward the counter while the other recoils with her mouth open, one hand braced on the counter. The other sister clutches a dish towel tight against her body., Three-quarter front view at eye level, medium shot on a 35mm lens, both sisters crowded slightly off-center. The nearer sister sits on the left third and the other on the right third, both fully visible from the waist up., Overhead fluorescent kitchen light centered above them, spilling forward with flat cool-white illumination and mild shadows under brows and chins. Under-cabinet reflections catch on metal surfaces, with a slight green cast and no warm sources., Their shoulders are tight, faces drawn, and bodies angled toward each other in a cramped space. The narrow kitchen and cluttered counter make the confrontation feel boxed in and immediate., Naturalistic digital realism with fine grain and restrained contrast. Cool green-white color grade, observational framing, and unadorned apartment detail with a subtle handheld documentary feel."
+  },
+  {
+    "revise_demo": "NUDGE",
+    "changed": [
+      "camera_angle"
+    ],
+    "revised": {
+      "segments": {
+        "subject": "A lone adult samurai of average height and lean build, wearing a dark indigo kimono under black lacquered chest armor, wide hakama trousers, and a rain-darkened straw kasa hat; a wrapped katana hangs at the left hip, soaked fabric edges heavy with rain.",
+        "setting": "Nighttime Tokyo side street in heavy rain, lined with bright neon signs, vending machines, and wet asphalt reflecting magenta, cyan, and red light. Foreground puddles splash underfoot, with storefront shutters, stacked vertical signs, power lines, and blurred apartment windows fading into rain haze.",
+        "action": "Walking steadily forward through the rain, shoulders slightly hunched against the weather, with water streaming off the hat brim and armor.",
+        "camera_angle": "Rear view from directly behind at eye level, medium-wide shot on a 35mm lens; the samurai is centered slightly low in frame with the street leading away ahead. His back faces the camera and his face is not visible.",
+        "lighting": "Motivated by neon signage and storefront practicals from both sides of the street, with a cool cyan key from camera-left and a magenta-red rim from camera-right. Soft contrast from rain diffusion, bright specular reflections on the wet pavement, and light atmospheric haze in the air.",
+        "mood": "Lonely and watchful, shown by the solitary figure against an empty street, hunched posture, and rain-softened distance around him.",
+        "style": "Digital capture with fine grain, 2.39:1 aspect ratio, saturated neon color grade with deep blacks and reflective highlights. Blade Runner 2049-inspired wet street reflections and dense colored practicals."
+      },
+      "negative": "",
+      "version": 2
+    }
+  },
+  {
+    "revise_demo": "REWRITE",
+    "changed": [
+      "camera_angle"
+    ],
+    "revised": {
+      "segments": {
+        "subject": "A lone adult samurai of average height and lean build, wearing a dark indigo kimono under black lacquered chest armor, wide hakama trousers, and a rain-darkened straw kasa hat; a wrapped katana hangs at the left hip, soaked fabric edges heavy with rain.",
+        "setting": "Nighttime Tokyo side street in heavy rain, lined with bright neon signs, vending machines, and wet asphalt reflecting magenta, cyan, and red light. Foreground puddles splash underfoot, with storefront shutters, stacked vertical signs, power lines, and blurred apartment windows fading into rain haze.",
+        "action": "Walking steadily forward through the rain, shoulders slightly hunched against the weather, with water streaming off the hat brim and armor.",
+        "camera_angle": "Rear view from behind at eye level, medium-wide on a 35mm lens; the samurai is centered slightly low in frame, walking away from camera, with his back shown and his face hidden.",
+        "lighting": "Motivated by neon signage and storefront practicals from both sides of the street, with a cool cyan key from camera-left and a magenta-red rim from camera-right. Soft contrast from rain diffusion, bright specular reflections on the wet pavement, and light atmospheric haze in the air.",
+        "mood": "Lonely and watchful, shown by the solitary figure against an empty street, hunched posture, and rain-softened distance around him.",
+        "style": "Digital capture with fine grain, 2.39:1 aspect ratio, saturated neon color grade with deep blacks and reflective highlights. Blade Runner 2049-inspired wet street reflections and dense colored practicals."
+      },
+      "negative": "",
+      "version": 2
+    }
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "description": "A lone samurai walks through rain-soaked neon Tokyo streets at night, dolly shot from behind.",
+    "error": "Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}}"
+  },
+  {
+    "description": "A gunslinger's eyes in extreme close-up as a church bell rings over a dusty square at noon.",
+    "error": "Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}}"
+  },
+  {
+    "description": "Two sisters argue in a cramped Seoul apartment kitchen, handheld, fluorescent light.",
+    "error": "Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}}"
+  }
+]

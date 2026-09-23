@@ -1,0 +1,58 @@
+.
+├── LICENSE
+├── README.md
+├── agentic_shot
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-312.pyc
+│   │   ├── config.cpython-312.pyc
+│   │   ├── interfaces.cpython-312.pyc
+│   │   ├── pipeline.cpython-312.pyc
+│   │   └── storage.cpython-312.pyc
+│   ├── agents
+│   │   ├── __init__.py
+│   │   ├── planner.py
+│   │   ├── prompter.py
+│   │   └── prompts.py
+│   ├── backends
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   ├── __init__.cpython-312.pyc
+│   │   │   ├── fakes.cpython-312.pyc
+│   │   │   └── llm.cpython-312.pyc
+│   │   ├── fakes.py
+│   │   └── llm.py
+│   ├── config.py
+│   ├── interfaces.py
+│   ├── pipeline.py
+│   ├── schemas
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   ├── __init__.cpython-312.pyc
+│   │   │   ├── evaluation.cpython-312.pyc
+│   │   │   ├── prompt.cpython-312.pyc
+│   │   │   ├── run.cpython-312.pyc
+│   │   │   └── spec.cpython-312.pyc
+│   │   ├── evaluation.py
+│   │   ├── prompt.py
+│   │   ├── run.py
+│   │   └── spec.py
+│   └── storage.py
+├── docs
+├── tests
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-312.pyc
+│   │   ├── test_pipeline.cpython-312-pytest-9.1.1.pyc
+│   │   ├── test_schemas.cpython-312-pytest-9.1.1.pyc
+│   │   └── test_storage.cpython-312-pytest-9.1.1.pyc
+│   ├── test_agents.py
+│   ├── test_pipeline.py
+│   ├── test_schemas.py
+│   └── test_storage.py
+├── tools
+│   ├── __init__.py
+│   └── try_agents.py
+└── tree.txt
+
+12 directories, 44 files
