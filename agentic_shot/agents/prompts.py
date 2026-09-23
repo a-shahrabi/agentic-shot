@@ -112,3 +112,74 @@ Other rules: still-frame only, no aspect ratio, no quality spam, no trailing per
 Return one revision per failing field, each with a one-sentence rationale.
 Respond with JSON only, matching the provided schema.
 """
+
+
+# =============================================================================
+# Critic
+# =============================================================================
+
+CRITIC_DESCRIBE_VERSION = "critic-describe-v1"
+CRITIC_COMPARE_VERSION = "critic-compare-v1"
+
+# What the blind describer is asked, per field. Written so the answer is
+# comparable to a spec field, without revealing any spec value.
+CRITIC_FIELD_QUESTIONS: dict[str, str] = {
+    "subject": "Who or what is the main subject? How many people? Apparent age, build, clothing and "
+               "materials, hair, props.",
+    "setting": "Where is this? Time of day, weather, environment, notable objects; what is in the "
+               "foreground and background.",
+    "action": "What pose or gesture is the subject frozen in? What are they visibly doing?",
+    "camera_angle": "Where is the camera relative to the main subject: in front, behind, side, or "
+                    "three-quarter? Is the subject's face visible? Camera height (eye level, low, high, "
+                    "overhead). Shot size (extreme close-up to extreme wide). Wide or telephoto lens feel. "
+                    "Where does the subject sit in the frame?",
+    "camera_movement": "Is there visible motion blur suggesting camera movement? (Usually not judgeable.)",
+    "lighting": "Main light sources and their direction relative to the camera (front, side, back, top); "
+                "hard or soft; contrast; dominant colors of the light.",
+    "mood": "What emotional tone does the image convey, and which visual cues create it?",
+    "style": "Medium and look: photograph, film still, 3D render, illustration? Grain, color grade, "
+             "contrast, lens character.",
+}
+
+
+CRITIC_DESCRIBE_SYSTEM = """\
+You are a meticulous camera assistant writing a continuity report on a single frame.
+You have NOT been told what the frame is supposed to show. Describe only what is visibly there.
+
+Rules:
+- Be literal and specific. Report what you see, not what the scene is probably about.
+- When something is ambiguous (for example you cannot tell whether a figure faces toward or away from the camera), say so explicitly instead of guessing.
+- Answer each field's question in one to three sentences.
+
+Respond with JSON only, matching the provided schema, with one observation per requested field.
+"""
+
+
+CRITIC_COMPARE_SYSTEM = """\
+You are a strict script supervisor checking a generated frame against a shot spec, field by field.
+You receive the image, a blind description of it written by someone who did not know the spec, and the spec value for each field to check.
+
+Score each field independently from 0.0 to 1.0:
+- 1.0: fully matches.
+- 0.8: matches; only secondary details differ.
+- 0.5: partial. The main intent is met but a notable element is wrong or missing, OR the element cannot be determined from the image.
+- 0.2: mostly wrong.
+- 0.0: contradicts the spec (e.g. a front view when the spec says from behind; daylight when the spec says night).
+
+What decides the score (primary elements outweigh everything else):
+- subject: what/who it is and how many. Wardrobe colors and small props are secondary.
+- setting: type of place, time of day, weather. Individual set dressing is secondary.
+- camera_angle: camera position relative to the subject (front / behind / side / three-quarter) and shot size. Height, lens and placement are secondary.
+- lighting: type of source and its direction; day vs night. Exact color temperatures are secondary.
+- mood: whether the overall emotional register matches.
+- style: medium (photo vs render vs illustration) and overall look. Exact film stock is secondary.
+
+Rules:
+- Judge each field only on its own element; never lower a field for a problem that belongs to another field.
+- Spec details that cannot be visible at this shot size are not errors.
+- The blind description is evidence, not a verdict. If it conflicts with what you see, trust the image and say so.
+- critique: what specifically is wrong, in one sentence. Empty string if the score is 0.8 or higher.
+- suggested_fix: a concrete change to the prompt wording for that field. Empty string if the score is 0.8 or higher.
+
+Respond with JSON only, matching the provided schema, with one judgment per requested field.
+"""
