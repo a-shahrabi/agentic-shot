@@ -1,0 +1,216 @@
+import json
+from pathlib import Path
+
+import pytest
+
+from agentic_shot.agents.critic import CachedCritic, VLMCritic
+from agentic_shot.backends.llm import parse_structured
+from agentic_shot.critic_eval import (
+    LabeledItem, best_threshold, compare, human_verdict, load_labels,
+    overall_agreement, read_descriptions, save_label,
+)
+from agentic_shot.interfaces import Critic
+from agentic_shot.schemas import EvaluableIn, Evaluation, FieldVerdict, ShotSpec, VerdictStatus
+from tests.test_schemas import make_spec
+
+IMAGE_FIELDS = list(ShotSpec.image_fields())
+WEAK = ["camera_angle", "lighting", "mood", "style"]
+
+
+class VisionLLM:
+    """Scripted VLM. `scores` is one dict per pass: {field: score}; default 0.9."""
+    model = "vision-fake"
+
+    def __init__(self, scores_per_pass=None, drop_fields_once=()):
+        self.scores = list(scores_per_pass or [{}])
+        self.calls = []
+        self.drop_once = set(drop_fields_once)
+
+    def complete(self, messages, *, schema=None, images=(), temperature=0.0):
+        self.calls.append({"messages": messages, "schema": schema.__name__,
+                           "images": list(images), "temperature": temperature})
+        asked = json.loads(messages[1]["content"].split("\n", 1)[1])
+        if schema.__name__ == "Observations":
+            fields = list(asked)
+            reply = {"observations": [{"field": f, "observation": f"saw {f}"} for f in fields]}
+        else:
+            fields = [a["field"] for a in asked]
+            idx = min(sum(c["schema"] == "Judgments" for c in self.calls) - 1, len(self.scores) - 1)
+            s = self.scores[idx]
+            if self.drop_once:
+                fields = [f for f in fields if f not in self.drop_once]
+                self.drop_once = set()
+            reply = {"judgments": [{"field": f, "score": s.get(f, 0.9),
+                                    "critique": f"{f} bad {s.get(f, 0.9)}",
+                                    "suggested_fix": f"fix {f}"} for f in fields]}
+        return parse_structured(json.dumps(reply), schema)
+
+
+@pytest.fixture
+def img(tmp_path: Path) -> Path:
+    p = tmp_path / "frame.png"
+    p.write_bytes(b"not really a png")
+    return p
+
+
+# ---- critic -----------------------------------------------------------------
+
+def test_satisfies_protocol():
+    assert isinstance(VLMCritic(VisionLLM()), Critic)
+
+
+def test_single_sample_makes_two_calls_and_skips_video_fields(img):
+    llm = VisionLLM()
+    ev = VLMCritic(llm, samples=1).evaluate(img, make_spec())
+    assert [c["schema"] for c in llm.calls] == ["Observations", "Judgments"]
+    assert ev.stage is EvaluableIn.IMAGE and ev.critic_model == "vision-fake"
+    by = ev.by_field()
+    for f in ShotSpec.video_fields():
+        assert by[f].status is VerdictStatus.SKIPPED
+    for f in IMAGE_FIELDS:
+        assert by[f].status is VerdictStatus.EVALUATED and by[f].passed
+
+
+def test_describe_step_is_blind_to_the_spec(img):
+    llm = VisionLLM()
+    spec = make_spec()
+    VLMCritic(llm, samples=1).evaluate(img, spec)
+    describe = json.dumps(llm.calls[0]["messages"])
+    for f in ShotSpec.FIELD_ORDER:
+        assert getattr(spec, f) not in describe, f"spec value for {f} leaked into describe"
+    compare_msg = json.dumps(llm.calls[1]["messages"])
+    assert spec.camera_angle in compare_msg and "saw camera_angle" in compare_msg
+
+
+def test_image_attached_to_both_calls(img):
+    llm = VisionLLM()
+    VLMCritic(llm, samples=1).evaluate(img, make_spec())
+    assert all(c["images"] == [img] for c in llm.calls)
+
+
+def test_weak_fields_are_multisampled_and_averaged(img):
+    llm = VisionLLM([{"camera_angle": 0.1}, {"camera_angle": 0.4}, {"camera_angle": 0.4}])
+    ev = VLMCritic(llm, samples=3).evaluate(img, make_spec())
+    assert len(llm.calls) == 6
+    extra_compare = json.loads(llm.calls[3]["messages"][1]["content"].split("\n", 1)[1])
+    assert sorted(a["field"] for a in extra_compare) == sorted(WEAK)   # strong fields not resampled
+    by = ev.by_field()
+    assert by["camera_angle"].samples == [0.1, 0.4, 0.4]
+    assert by["camera_angle"].score == pytest.approx(0.3)
+    assert not by["camera_angle"].passed
+    assert by["subject"].samples == [0.9]
+    assert by["camera_angle"].sample_spread == pytest.approx(0.3)
+
+
+def test_failing_field_reports_most_negative_critique(img):
+    llm = VisionLLM([{"lighting": 0.4}, {"lighting": 0.0}, {"lighting": 0.3}])
+    ev = VLMCritic(llm, samples=3).evaluate(img, make_spec())
+    assert ev.by_field()["lighting"].critique == "lighting bad 0.0"
+
+
+def test_scores_are_clamped(img):
+    llm = VisionLLM([{"subject": 1.7, "setting": -0.4}])
+    by = VLMCritic(llm, samples=1).evaluate(img, make_spec()).by_field()
+    assert by["subject"].score == 1.0 and by["setting"].score == 0.0
+
+
+def test_missing_field_is_retried_once(img):
+    llm = VisionLLM(drop_fields_once=["lighting"])
+    ev = VLMCritic(llm, samples=1).evaluate(img, make_spec())
+    assert [c["schema"] for c in llm.calls] == ["Observations", "Judgments", "Judgments"]
+    assert ev.by_field()["lighting"].status is VerdictStatus.EVALUATED
+
+
+def test_missing_field_twice_raises(img):
+    class AlwaysDrops(VisionLLM):
+        def complete(self, messages, **kw):
+            self.drop_once = {"lighting"}
+            return super().complete(messages, **kw)
+    with pytest.raises(ValueError, match="lighting"):
+        VLMCritic(AlwaysDrops(), samples=1).evaluate(img, make_spec())
+
+
+def test_critic_output_drives_pass_rule(img):
+    ev = VLMCritic(VisionLLM([{"camera_angle": 0.1}]), samples=1).evaluate(img, make_spec())
+    assert ev.fields_to_revise() == ["camera_angle"]
+    assert not ev.overall_pass(threshold=0.7)
+
+
+# ---- cache ------------------------------------------------------------------
+
+def test_cache_hits_on_repeat_and_misses_on_change(img, tmp_path):
+    llm = VisionLLM()
+    critic = CachedCritic(VLMCritic(llm, samples=1), tmp_path / "cache")
+    a = critic.evaluate(img, make_spec())
+    b = critic.evaluate(img, make_spec())
+    assert a == b and len(llm.calls) == 2 and critic.hits == 1
+    critic.evaluate(img, make_spec().model_copy(update={"lighting": "daylight"}))
+    assert critic.misses == 2
+    img.write_bytes(b"different image")
+    critic.evaluate(img, make_spec())
+    assert critic.misses == 3
+
+
+def test_cache_key_includes_critic_identity(img, tmp_path):
+    a = CachedCritic(VLMCritic(VisionLLM(), samples=1), tmp_path)
+    b = CachedCritic(VLMCritic(VisionLLM(), samples=3), tmp_path)
+    assert a.key(img, make_spec()) != b.key(img, make_spec())
+
+
+# ---- dataset + metrics ------------------------------------------------------
+
+def test_read_descriptions_matches_by_filename(tmp_path):
+    (tmp_path / "images").mkdir()
+    (tmp_path / "images" / "a.jpg").write_bytes(b"x")
+    (tmp_path / "descriptions.csv").write_text(
+        'filename,description\na.jpg,"samurai, from behind"\nmissing.jpg,nope\n')
+    rows, missing = read_descriptions(tmp_path)
+    assert rows == [("a.jpg", "samurai, from behind")]
+    assert missing == ["missing.jpg"]
+
+
+def test_read_descriptions_requires_header(tmp_path):
+    (tmp_path / "descriptions.csv").write_text("a.jpg,samurai\n")
+    with pytest.raises(ValueError, match="header"):
+        read_descriptions(tmp_path)
+
+
+def test_label_roundtrip(tmp_path):
+    item = LabeledItem(filename="a.jpg", description="d", spec=make_spec(),
+                       human=[human_verdict("subject", True),
+                              human_verdict("camera_angle", False, "front view"),
+                              FieldVerdict.skipped("lighting")])
+    save_label(tmp_path, item)
+    [back] = load_labels(tmp_path)
+    assert back == item
+    assert set(back.human_by_field()) == {"subject", "camera_angle"}
+
+
+def test_best_threshold():
+    t, acc = best_threshold([0.8, 0.9, 0.6], [0.1, 0.3, 0.2])
+    assert 0.3 < t <= 0.6 and acc == 1.0
+    assert best_threshold([0.9], []) == (None, None)
+
+
+def _critic_eval(scores: dict[str, float]) -> Evaluation:
+    verdicts = [FieldVerdict(field=f, score=scores.get(f, 0.9), passed=scores.get(f, 0.9) >= 0.5)
+                for f in IMAGE_FIELDS]
+    verdicts += [FieldVerdict.skipped(f) for f in ShotSpec.video_fields()]
+    return Evaluation(verdicts=verdicts, stage=EvaluableIn.IMAGE)
+
+
+def test_compare_counts_false_pass_and_false_fail():
+    items = [
+        LabeledItem(filename="a", description="d", spec=make_spec(),
+                    human=[human_verdict("camera_angle", False), human_verdict("subject", True)]),
+        LabeledItem(filename="b", description="d", spec=make_spec(),
+                    human=[human_verdict("camera_angle", True), human_verdict("subject", True)]),
+    ]
+    evs = {"a": _critic_eval({"camera_angle": 0.8}),      # critic passes a wrong angle
+           "b": _critic_eval({"subject": 0.2})}           # critic fails a right subject
+    stats, dis = compare(items, evs)
+    assert stats["camera_angle"].false_pass == 1 and stats["camera_angle"].agree == 1
+    assert stats["subject"].false_fail == 1 and stats["subject"].agree == 1
+    assert stats["lighting"].n == 0                       # unlabeled fields don't count
+    assert overall_agreement(stats) == 0.5
+    assert {(d.filename, d.field) for d in dis} == {("a", "camera_angle"), ("b", "subject")}
