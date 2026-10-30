@@ -1,0 +1,98 @@
+{
+  "filename": "chef-restaurant-above.png",
+  "description": "A chef works alone in a warm restaurant kitchen at night, eye-level medium shot.",
+  "spec": {
+    "subject": "A solitary chef, early 40s, average build, in a white double-breasted jacket with rolled sleeves, black apron, dark checkered kitchen trousers, and a white chef’s cap; sleeves slightly stained from service, face lightly sheened with sweat.",
+    "setting": "Warm restaurant kitchen at night, stainless-steel counters and tiled backsplash visible, with a cutting board and a few small prep bowls in the foreground, a stove line and hanging utensils in the midground, and softly blurred prep shelving and dim pass-through lights in the background.",
+    "action": "The chef is methodically chopping herbs on a cutting board with a chef’s knife.",
+    "camera_angle": "front three-quarter view, eye level, medium shot, 50mm lens, chef placed slightly off-center in frame.",
+    "camera_movement": "static",
+    "lighting": "Soft warm overhead practical kitchen lights as the key, with a slight cooler spill from the stove area for separation; gentle shadows, moderate contrast, practicals visible in frame, no haze.",
+    "mood": "Focused, quiet, solitary.",
+    "style": "Digital capture with fine grain, warm amber and stainless-steel color grade, naturalistic restaurant-kitchen realism with restrained contrast."
+  },
+  "human": [
+    {
+      "field": "subject",
+      "status": "evaluated",
+      "score": 0.0,
+      "passed": false,
+      "description": null,
+      "critique": "shot from above, not eye leve",
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "setting",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "action",
+      "status": "skipped",
+      "score": null,
+      "passed": null,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "camera_angle",
+      "status": "evaluated",
+      "score": 0.0,
+      "passed": false,
+      "description": null,
+      "critique": "overhead, not eye level",
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "camera_movement",
+      "status": "skipped",
+      "score": null,
+      "passed": null,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "lighting",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "mood",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "style",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    }
+  ],
+  "labeled_at": "2026-10-30T02:32:39.954433Z",
+  "planner_model": "gpt-5.4-mini"
+}

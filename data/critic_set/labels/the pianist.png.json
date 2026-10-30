@@ -1,0 +1,98 @@
+{
+  "filename": "the pianist.png",
+  "description": "A musician plays piano alone on a dark stage, side view with a single spotlight.",
+  "spec": {
+    "subject": "A lone adult musician, slim build, in a black formal shirt and dark trousers, seated at a glossy black grand piano; short dark hair, no visible accessories.",
+    "setting": "Dark theater stage at night, empty beyond the performance area. Foreground is the piano bench and the near edge of the grand piano; midground is the pianist and instrument; background falls off into blackness with no visible set dressing.",
+    "action": "Playing the piano with both hands, body angled toward the keys, head slightly bowed.",
+    "camera_angle": "Profile side view at eye level, subject slightly left of center, piano extending across the frame",
+    "camera_movement": "static",
+    "lighting": "Single hard white spotlight from high front-left of camera, creating a bright pool on the pianist and piano lid while the rest of the stage remains unlit; high contrast, minimal spill, no visible haze.",
+    "mood": "isolated, focused, intimate",
+    "style": "Digital cinema capture with clean detail and subtle grain, deep blacks, restrained contrast, neutral color grade with cool shadows and warm skin tones; stage-performance look with a single-pool spotlight composition."
+  },
+  "human": [
+    {
+      "field": "subject",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "setting",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "action",
+      "status": "skipped",
+      "score": null,
+      "passed": null,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "camera_angle",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "camera_movement",
+      "status": "skipped",
+      "score": null,
+      "passed": null,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "lighting",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "mood",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "style",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    }
+  ],
+  "labeled_at": "2026-09-29T03:22:42.888618Z",
+  "planner_model": "gpt-5.4-mini"
+}

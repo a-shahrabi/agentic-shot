@@ -1,0 +1,98 @@
+{
+  "filename": "2friends.png",
+  "description": "Two friends stand on a rooftop overlooking the city at sunset, wide cinematic shot.",
+  "spec": {
+    "subject": "Two friends, both in their late 20s, average height and build, one wearing a dark denim jacket over a gray hoodie and jeans, the other in a light tan bomber jacket, black T-shirt, and slim trousers; both with wind-tousled hair, no visible props.",
+    "setting": "A flat urban rooftop with a low concrete parapet, city skyline in the background, sunset sky",
+    "action": "They stand side by side at the parapet, facing out toward the city.",
+    "camera_angle": "behind and slightly to the three-quarter side of the two friends, eye level, wide shot, 35mm lens, both figures placed low and centered with the skyline filling the upper frame.",
+    "camera_movement": "static",
+    "lighting": "Warm low sunset light, orange tones, rim light on the figures",
+    "mood": "quiet, reflective, companionable",
+    "style": "Digital sensor look with fine natural grain, warm sunset color grade with slightly lifted shadows, restrained contrast, inspired by contemporary urban drama framing with clean horizon lines and silhouetted figures."
+  },
+  "human": [
+    {
+      "field": "subject",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "setting",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "action",
+      "status": "skipped",
+      "score": null,
+      "passed": null,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "camera_angle",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "camera_movement",
+      "status": "skipped",
+      "score": null,
+      "passed": null,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "lighting",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "mood",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "style",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    }
+  ],
+  "labeled_at": "2026-09-28T03:31:02.126749Z",
+  "planner_model": "gpt-5.4-mini"
+}

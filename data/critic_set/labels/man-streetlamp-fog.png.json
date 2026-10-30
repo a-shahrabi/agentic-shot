@@ -1,0 +1,98 @@
+{
+  "filename": "man-streetlamp-fog.png",
+  "description": "A man stands under a streetlamp in thick fog, full-body shot from a distance.",
+  "spec": {
+    "subject": "Adult man, late 30s to early 40s, average height and build, wearing a dark wool overcoat, straight-leg trousers, and leather shoes; short hair, clean-shaven, no visible accessories.",
+    "setting": "Empty street at night in dense fog; the streetlamp is the only clearly visible fixture. Foreground is a stretch of wet pavement catching the lamp glow, midground is the man standing beneath the light, background falls off into white-gray fog with no readable buildings or traffic.",
+    "action": "Standing still beneath the streetlamp, facing slightly toward camera.",
+    "camera_angle": "Extreme wide full-body shot at eye level, the man small in frame with plenty of negative space around him",
+    "camera_movement": "static",
+    "lighting": "Single overhead streetlamp as motivated key, warm sodium-vapor amber from above and slightly in front of the subject, soft-edged due to heavy fog, low contrast with the fog diffusing the light into a halo; faint ambient cool-gray fill from the surrounding night and moisture in the air.",
+    "mood": "isolated, quiet, suspended",
+    "style": "Digital capture with fine grain, muted cool-gray and amber palette, low-contrast fog diffusion, naturalistic night exterior look reminiscent of a sparse noir street scene with softened edges and minimal detail beyond the lamp pool."
+  },
+  "human": [
+    {
+      "field": "subject",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "setting",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "action",
+      "status": "skipped",
+      "score": null,
+      "passed": null,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "camera_angle",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "camera_movement",
+      "status": "skipped",
+      "score": null,
+      "passed": null,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "lighting",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "mood",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "style",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    }
+  ],
+  "labeled_at": "2026-10-30T03:06:54.989945Z",
+  "planner_model": "gpt-5.4-mini"
+}

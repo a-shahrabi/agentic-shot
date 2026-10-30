@@ -1,0 +1,98 @@
+{
+  "filename": "woman-red-coat.png",
+  "description": "A woman in a red coat sits alone in a dim train carriage at night, close-up portrait with soft window light.",
+  "spec": {
+    "subject": "Woman, late 20s to early 30s, slim build, shoulder-length dark hair tucked behind one ear, wearing a wool red coat with a high collar over a dark top; no visible jewelry, natural makeup, calm but tired expression.",
+    "setting": "Interior of a dim passenger train carriage at night; only the seat back, a narrow slice of window edge, and the blurred dark exterior reflections are visible in frame.",
+    "action": "Sitting still alone, gaze lowered slightly toward the window just out of frame.",
+    "camera_angle": "front three-quarter view from slightly above eye level, extreme close-up portrait, 85mm lens, woman placed slightly off-center with her face filling most of the frame.",
+    "camera_movement": "static",
+    "lighting": "Soft cool window light from camera-left, wrapping gently across her face; very low ambient carriage light with no strong practicals visible; low contrast, blue-gray night tones with the red coat providing the main color accent.",
+    "mood": "Quiet, solitary, reflective.",
+    "style": "Digital handheld-look portrait texture with fine grain, subdued contrast, muted night palette; restrained naturalistic lighting with soft falloff and shallow depth of field."
+  },
+  "human": [
+    {
+      "field": "subject",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "setting",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "action",
+      "status": "skipped",
+      "score": null,
+      "passed": null,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "camera_angle",
+      "status": "evaluated",
+      "score": 0.0,
+      "passed": false,
+      "description": null,
+      "critique": "medium close-up, not close-up",
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "camera_movement",
+      "status": "skipped",
+      "score": null,
+      "passed": null,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "lighting",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "mood",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "style",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    }
+  ],
+  "labeled_at": "2026-10-30T03:14:58.893060Z",
+  "planner_model": "gpt-5.4-mini"
+}

@@ -1,0 +1,98 @@
+{
+  "filename": "soldier.png",
+  "description": "A soldier walks across an empty field at dawn, long shot with heavy morning mist.",
+  "spec": {
+    "subject": "A lone adult soldier, average height and build, wearing a dark olive drab field uniform, mud-stained combat boots, a web belt, and a steel helmet; no visible insignia, a rifle slung low across the back.",
+    "setting": "An empty open field at dawn, covered in heavy ground-level morning mist; short wet grass in the foreground, a flat pale field in the midground, and a barely visible horizon line fading into white fog in the background.",
+    "action": "The soldier walks steadily across the field from left to right, legs partially obscured by the mist.",
+    "camera_angle": "Long shot at eye level, soldier in the left third of frame with open misty space ahead",
+    "camera_movement": "static",
+    "lighting": "Natural dawn light through heavy mist, low sun, haze filling the air",
+    "mood": "quiet, isolated, watchful",
+    "style": "Digital capture with fine grain, muted cool color grade, restrained contrast, naturalistic war-film realism with soft fog diffusion and subdued earth tones."
+  },
+  "human": [
+    {
+      "field": "subject",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "setting",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "action",
+      "status": "skipped",
+      "score": null,
+      "passed": null,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "camera_angle",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "camera_movement",
+      "status": "skipped",
+      "score": null,
+      "passed": null,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "lighting",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "mood",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "style",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    }
+  ],
+  "labeled_at": "2026-10-30T02:49:39.941366Z",
+  "planner_model": "gpt-5.4-mini"
+}

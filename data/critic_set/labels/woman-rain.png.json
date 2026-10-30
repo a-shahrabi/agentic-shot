@@ -1,0 +1,98 @@
+{
+  "filename": "woman-rain.png",
+  "description": "A woman looks out a train window during heavy rain, side-profile medium shot.",
+  "spec": {
+    "subject": "A woman in her late 20s with a slim build, shoulder-length dark hair damp from humidity, wearing a dark wool coat over a light blouse; no visible accessories; her skin shows soft window reflections.",
+    "setting": "Inside a passenger train carriage during heavy rain. The window fills the background with streaking rain and blurred gray daylight; the seat edge and a narrow strip of window frame sit in the foreground and midground.",
+    "action": "She stands or sits still, looking out through the rain-streaked window.",
+    "camera_angle": "profile, eye level, medium shot, 50mm lens, subject placed on the left third of the frame facing right",
+    "camera_movement": "static",
+    "lighting": "Soft overcast daylight filtered through the rain-soaked window from camera-right, low-contrast cool gray-blue light with faint reflected highlights on her cheek and hair; no visible practicals.",
+    "mood": "quiet, reflective, isolated",
+    "style": "Digital capture with fine grain, cool muted color grade, naturalistic contrast, restrained realism"
+  },
+  "human": [
+    {
+      "field": "subject",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "setting",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "action",
+      "status": "skipped",
+      "score": null,
+      "passed": null,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "camera_angle",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "camera_movement",
+      "status": "skipped",
+      "score": null,
+      "passed": null,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "lighting",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "mood",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "style",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    }
+  ],
+  "labeled_at": "2026-10-30T02:38:02.685172Z",
+  "planner_model": "gpt-5.4-mini"
+}

@@ -1,0 +1,98 @@
+{
+  "filename": "red-car.png",
+  "description": "A red sports car drives through a neon-lit city street at night, side view.",
+  "spec": {
+    "subject": "A glossy red two-door sports car with low-slung bodywork, black tinted windows, silver alloy wheels, and clean reflective paint",
+    "setting": "Nighttime urban street lined with bright neon storefront signs and wet pavement reflecting colored light; foreground shows the car passing close to camera, midground is the lane and curb, background is a blur of illuminated shopfronts and traffic lights",
+    "action": "The sports car drives steadily across frame along the street",
+    "camera_angle": "profile side view, eye level, medium-wide shot, 50mm lens, car centered horizontally with enough space ahead in frame for motion",
+    "camera_movement": "tracking sideways at matched speed, keeping the car centered",
+    "lighting": "Neon signs from both sides of the street provide hard colored highlights in pink, cyan, and blue; streetlights add a softer overhead fill; reflections ripple across the car’s body and the wet road; no visible haze",
+    "mood": "sleek, fast, nocturnal",
+    "style": "digital capture with crisp detail and slight motion blur on the background, cool neon-heavy color grade with saturated magenta and cyan reflections, urban night-racing look"
+  },
+  "human": [
+    {
+      "field": "subject",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "setting",
+      "status": "evaluated",
+      "score": 0.0,
+      "passed": false,
+      "description": null,
+      "critique": "snowy mountain road, not neon city",
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "action",
+      "status": "skipped",
+      "score": null,
+      "passed": null,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "camera_angle",
+      "status": "evaluated",
+      "score": 0.0,
+      "passed": false,
+      "description": null,
+      "critique": "front three-quarter, not side view",
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "camera_movement",
+      "status": "skipped",
+      "score": null,
+      "passed": null,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "lighting",
+      "status": "evaluated",
+      "score": 0.0,
+      "passed": false,
+      "description": null,
+      "critique": "natural sunset light, not neon night",
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "mood",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "style",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    }
+  ],
+  "labeled_at": "2026-10-30T02:59:21.600295Z",
+  "planner_model": "gpt-5.4-mini"
+}

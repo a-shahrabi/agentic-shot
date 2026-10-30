@@ -1,0 +1,98 @@
+{
+  "filename": "astronaut.png",
+  "description": "An astronaut stands alone on a barren lunar landscape in a wide shot.",
+  "spec": {
+    "subject": "A lone astronaut in a white EVA suit with scuffed thermal layers, a reflective gold visor, bulky life-support backpack, and dust-coated boots",
+    "setting": "Barren lunar surface under a black sky, with gray regolith, scattered small rocks in the foreground, low rolling ridges in the midground, and a distant crater rim on the horizon; no atmosphere, no vegetation, no visible structures",
+    "action": "Standing still and facing into the open landscape",
+    "camera_angle": "three-quarter front, eye level, extreme wide shot, 24mm lens, the astronaut placed small in the lower center of frame",
+    "camera_movement": "static",
+    "lighting": "hard sunlight from high camera-left, crisp shadows falling to camera-right, high-contrast monochrome-gray palette with bright specular highlights on the suit",
+    "mood": "isolated, silent, exposed",
+    "style": "digital capture with fine grain, neutral-to-cool grade, realistic lunar-surface detail and stark contrast"
+  },
+  "human": [
+    {
+      "field": "subject",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "setting",
+      "status": "evaluated",
+      "score": 0.0,
+      "passed": false,
+      "description": null,
+      "critique": "spacecraft interior, not lunar surface",
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "action",
+      "status": "skipped",
+      "score": null,
+      "passed": null,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "camera_angle",
+      "status": "evaluated",
+      "score": 0.0,
+      "passed": false,
+      "description": null,
+      "critique": "medium close-up, not wide.",
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "camera_movement",
+      "status": "skipped",
+      "score": null,
+      "passed": null,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "lighting",
+      "status": "evaluated",
+      "score": 0.0,
+      "passed": false,
+      "description": null,
+      "critique": "dim soft cabin light, not hard sunlight",
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "mood",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "style",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    }
+  ],
+  "labeled_at": "2026-10-30T02:44:46.266505Z",
+  "planner_model": "gpt-5.4-mini"
+}

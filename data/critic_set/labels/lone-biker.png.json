@@ -1,0 +1,98 @@
+{
+  "filename": "lone-biker.png",
+  "description": "A lone biker stands beside a motorcycle on a foggy mountain road at sunrise, wide cinematic shot from the side.",
+  "spec": {
+    "subject": "A lone adult biker of average height and lean build, wearing a black full-face helmet, weathered brown leather jacket, dark riding pants, gloves, and boots, standing beside a parked motorcycle with a matte black frame and chrome details.",
+    "setting": "Foggy mountain road at sunrise; damp asphalt with a pale center line in the foreground, the motorcycle and rider in the midground, and a soft wall of fog swallowing the road and distant hillside in the background.",
+    "action": "The biker stands still beside the motorcycle, one hand resting on the handlebar while looking down the road.",
+    "camera_angle": "side profile, eye level, wide shot, 35mm lens, subject placed on the left third of frame with the motorcycle extending toward center.",
+    "camera_movement": "static",
+    "lighting": "Low sunrise light from behind the subject, warm amber highlights on the helmet and bike edges, mist in the air",
+    "mood": "Quiet, solitary, anticipatory.",
+    "style": "Digital capture with fine grain, restrained natural color grade with warm highlights and cool shadows, realistic road-film look with soft atmospheric haze and muted contrast."
+  },
+  "human": [
+    {
+      "field": "subject",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "setting",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "action",
+      "status": "skipped",
+      "score": null,
+      "passed": null,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "camera_angle",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "camera_movement",
+      "status": "skipped",
+      "score": null,
+      "passed": null,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "lighting",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "mood",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "style",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    }
+  ],
+  "labeled_at": "2026-10-30T03:12:39.759150Z",
+  "planner_model": "gpt-5.4-mini"
+}

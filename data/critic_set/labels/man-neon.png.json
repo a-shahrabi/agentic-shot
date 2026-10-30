@@ -1,0 +1,98 @@
+{
+  "filename": "man-neon.png",
+  "description": "A man in a black coat walks through a rainy neon alley at night, shot from behind.",
+  "spec": {
+    "subject": "Adult man, average height and build, wearing a knee-length black wool coat with a raised collar, dark trousers, and black leather shoes; short dark hair visible above the collar, no umbrella, coat surface damp with rain",
+    "setting": "Narrow urban alley at night in steady rain, wet asphalt reflecting neon signage; foreground filled with puddles and glistening pavement, midground with brick walls, metal fire escapes, and glowing shop signs spilling colored light, background receding into darkness with more neon reflections and rain streaks",
+    "action": "Walking away from the camera down the alley with a steady pace",
+    "camera_angle": "behind the subject, eye level, medium-wide shot, 35mm lens, subject centered slightly low in frame",
+    "camera_movement": "slow dolly forward, following at constant distance",
+    "lighting": "Neon practicals from both sides of the alley provide colored side and rear light, with a cool cyan key from camera-left and a magenta rim from camera-right; soft rain diffusion, medium contrast, wet surfaces catching specular highlights, light haze in the air",
+    "mood": "lonely, tense, nocturnal",
+    "style": "Digital capture with fine grain, saturated neon reflections, deep blacks, high-contrast night street look, inspired by Blade Runner-style urban rain scenes with dense colored practicals and wet-surface reflections"
+  },
+  "human": [
+    {
+      "field": "subject",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "setting",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "action",
+      "status": "skipped",
+      "score": null,
+      "passed": null,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "camera_angle",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "camera_movement",
+      "status": "skipped",
+      "score": null,
+      "passed": null,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "lighting",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "mood",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "style",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    }
+  ],
+  "labeled_at": "2026-10-30T03:10:05.379450Z",
+  "planner_model": "gpt-5.4-mini"
+}

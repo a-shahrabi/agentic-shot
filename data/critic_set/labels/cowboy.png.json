@@ -1,0 +1,98 @@
+{
+  "filename": "cowboy.png",
+  "description": "A cowboy rides through a dusty town at sunset, high-angle cinematic shot.",
+  "spec": {
+    "subject": "A lone adult cowboy, lean build, wearing a weathered tan felt hat, faded denim shirt, dark leather vest, worn jeans, and scuffed leather boots, riding a brown horse with a dusty saddle and bedroll.",
+    "setting": "A small frontier town street at sunset, packed dirt road with a thin veil of dust in the air, wooden storefronts lining both sides, hitching posts and a few barrels along the edges, long shadows stretching across the street, background buildings softened by dust and warm light.",
+    "action": "The cowboy rides steadily down the center of the street at an easy trot, the horse’s hooves kicking up a light plume of dust.",
+    "camera_angle": "High-angle, three-quarter front view, wide shot, 35mm lens, looking down from above the street with the rider placed slightly below center frame.",
+    "camera_movement": "Slow descending crane move, keeping the rider centered while lowering slightly as he passes through frame.",
+    "lighting": "Sunset backlight from low behind the buildings, warm amber-orange key with soft side fill from the open sky, moderate contrast, long shadows, dust catching the light, no visible artificial practicals.",
+    "mood": "Quiet, solitary, tense, nostalgic.",
+    "style": "Digital capture with fine grain, warm sepia-orange color grade, classic western look with crisp dust detail and long-shadow composition."
+  },
+  "human": [
+    {
+      "field": "subject",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "setting",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "action",
+      "status": "skipped",
+      "score": null,
+      "passed": null,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "camera_angle",
+      "status": "evaluated",
+      "score": 0.0,
+      "passed": false,
+      "description": null,
+      "critique": "low angle from the ground, not high angle",
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "camera_movement",
+      "status": "skipped",
+      "score": null,
+      "passed": null,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "lighting",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "mood",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "style",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    }
+  ],
+  "labeled_at": "2026-10-30T03:08:45.256286Z",
+  "planner_model": "gpt-5.4-mini"
+}

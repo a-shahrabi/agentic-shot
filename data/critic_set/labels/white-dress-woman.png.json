@@ -1,0 +1,98 @@
+{
+  "filename": "white-dress-woman.png",
+  "description": "A woman in a white dress walks through a green forest at sunrise, shot from behind.",
+  "spec": {
+    "subject": "A woman in her late 20s, average height and slim build, wearing a simple white cotton dress with short sleeves and a slightly flowing skirt; long dark brown hair loose down her back, no visible accessories.",
+    "setting": "A dense green forest at sunrise, with damp leaf litter and low ferns in the foreground, slender tree trunks and soft undergrowth in the midground, and pale morning light filtering through layered foliage in the background; light mist hangs between the trees.",
+    "action": "She walks forward along a narrow forest path, seen from behind.",
+    "camera_angle": "behind the subject, eye level, medium-wide shot, 35mm lens, subject centered slightly low in frame with the path leading away from camera",
+    "camera_movement": "slow dolly forward, following at constant distance",
+    "lighting": "Natural sunrise light coming from ahead of the subject and slightly off-center, creating backlit edges on her dress and hair; soft, diffuse contrast through thin mist; cool green ambient fill with warm golden highlights; no artificial practicals.",
+    "mood": "Quiet, reflective, gently hopeful.",
+    "style": "Digital capture with fine grain, naturalistic color grade, soft greens and warm sunrise tones, restrained contrast, realistic outdoor texture."
+  },
+  "human": [
+    {
+      "field": "subject",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "setting",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "action",
+      "status": "skipped",
+      "score": null,
+      "passed": null,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "camera_angle",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "camera_movement",
+      "status": "skipped",
+      "score": null,
+      "passed": null,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "lighting",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "mood",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "style",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    }
+  ],
+  "labeled_at": "2026-09-29T03:06:31.548716Z",
+  "planner_model": "gpt-5.4-mini"
+}

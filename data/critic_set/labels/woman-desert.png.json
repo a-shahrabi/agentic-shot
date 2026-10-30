@@ -1,0 +1,98 @@
+{
+  "filename": "woman-desert.png",
+  "description": "A young woman stands in a bright desert at noon, wide shot with harsh sunlight.",
+  "spec": {
+    "subject": "A young woman, early 20s, slim build, wearing a light beige long-sleeve linen shirt, faded tan cargo pants, and dusty brown hiking boots; dark hair tied back low, no visible accessories.",
+    "setting": "Open desert at noon under a clear sky; pale sand and scattered low scrub in the foreground, a flat expanse of sun-bleached ground in the midground, and a low line of distant heat-shimmered dunes on the horizon in the background.",
+    "action": "She stands still, facing slightly into the sun.",
+    "camera_angle": "Extreme wide shot at eye level, subject slightly left of center with ample negative space",
+    "camera_movement": "static",
+    "lighting": "Hard overhead sunlight from high above and slightly camera-right, creating short crisp shadows under her body and boots; high-contrast exposure with bright warm highlights and deep shadow edges; natural daylight palette with a faint blue sky reflection; no practicals; dry air with visible heat shimmer.",
+    "mood": "Exposed, solitary, stark",
+    "style": "Digital capture with fine grain, neutral-to-warm desert color grade, crisp detail and strong contrast, in the manner of a restrained location portrait with unembellished natural light."
+  },
+  "human": [
+    {
+      "field": "subject",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "setting",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "action",
+      "status": "skipped",
+      "score": null,
+      "passed": null,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "camera_angle",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "camera_movement",
+      "status": "skipped",
+      "score": null,
+      "passed": null,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "lighting",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "mood",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "style",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    }
+  ],
+  "labeled_at": "2026-09-29T03:15:55.730085Z",
+  "planner_model": "gpt-5.4-mini"
+}

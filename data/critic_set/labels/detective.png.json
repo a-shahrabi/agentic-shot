@@ -1,0 +1,98 @@
+{
+  "filename": "detective.png",
+  "description": "A detective sits at a desk in a dim office, close-up with dramatic side lighting.",
+  "spec": {
+    "subject": "A tired male detective in his late 40s, average build, wearing a rumpled dark wool suit, white dress shirt with the collar open, loosened tie, and a slightly worn fedora resting out of frame; short dark hair with gray at the temples, a rough jawline, and faint under-eye shadows.",
+    "setting": "Dim private office at night; only a narrow sliver of desk edge and the blurred suggestion of stacked files and a desk lamp base are visible at the frame edges, with the rest falling into darkness.",
+    "action": "He sits still at the desk, head angled slightly down as if thinking.",
+    "camera_angle": "front three-quarter view, eye level, close-up, 85mm lens, the detective’s face and upper shoulders centered slightly off to the left.",
+    "camera_movement": "static",
+    "lighting": "Dramatic low-key side lighting from a warm desk lamp",
+    "mood": "tense, weary, introspective",
+    "style": "Digital capture with restrained grain, muted blue-black shadows, warm skin tones, and a noir-inspired hard side-lighting setup with deep contrast and clean facial detail."
+  },
+  "human": [
+    {
+      "field": "subject",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "setting",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "action",
+      "status": "skipped",
+      "score": null,
+      "passed": null,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "camera_angle",
+      "status": "evaluated",
+      "score": 0.0,
+      "passed": false,
+      "description": null,
+      "critique": "medium shot, not close-up",
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "camera_movement",
+      "status": "skipped",
+      "score": null,
+      "passed": null,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "lighting",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "mood",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    },
+    {
+      "field": "style",
+      "status": "evaluated",
+      "score": 1.0,
+      "passed": true,
+      "description": null,
+      "critique": null,
+      "suggested_fix": null,
+      "samples": []
+    }
+  ],
+  "labeled_at": "2026-09-29T03:02:44.528210Z",
+  "planner_model": "gpt-5.4-mini"
+}
